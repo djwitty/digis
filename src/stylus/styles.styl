@@ -1,0 +1,458 @@
+@import 'smart-grid'
+@import 'libs.styl'
+@import 'variables.styl'
+
+body
+  background-color: #055b83
+  color: #444444
+  font-family: Arial, Helvetica, sans-serif
+  font-size: 14px
+  margin: 0
+  padding: 0
+ul, li
+  list-style: none
+  margin: 0
+  padding: 0
+.wrapper
+  padding: 76px 0 66px
+  margin: 0 auto
+  width: 1680px
+.clear
+  clear: both
+  height: 0 !important
+  min-height: 0 !important
+  font-size: 0
+.content
+  row-flex()
+  .slider-wrapper
+    col()
+    size(7)
+    size-md(7)
+    lg(justify-content, center)
+    padding-bottom: 108px
+    .slider
+      col()
+      size(12)
+      position: relative
+      height: 256px
+      padding-bottom: 104px
+      button.slick-arrow
+        position: absolute
+        bottom: -64px
+        width: 64px
+        height: 64px
+        background-repeat: no-repeat
+        background-position: center center
+        background-color: color_01
+        border: 0 none 
+        outline: 0 none
+        font-size: 0
+        text-indent: -9999px
+        cursor: pointer
+      button.slick-arrow.slick-prev
+        left: 0
+        background-image: url('../img/icons/arrow.png')
+        transform: rotate(180deg)
+      button.slick-arrow.slick-next
+        right: 0
+        background-image: url('../img/icons/arrow.png')
+      .slick-dots
+        row-flex()
+        col()
+        size(12)
+        margin: 0
+        padding: 1rem 0
+        justify-content: center
+        align-items: center
+        height: 64px
+        background: #fff
+        li button
+          background-position: 0 0
+          background-repeat: no-repeat
+          background-image: url('../img/icons/slider_nav.png')
+          background-color: transparent
+          border: 0 none
+          outline: 0 none
+          cursor: pointer
+          font-size: 0
+          text-indent: -9999px
+          width: 22px
+          height: 22px
+        li.slick-active button {
+          background: url('../img/icons/slider_nav_active.png')
+        }
+      .slider-item
+        background-color: #ccc
+        size-lg(12)
+        size-md(12)
+        size-sm(12)
+        height: 256px
+      col()
+        size(12)
+        size-md(12)
+        size-xs(12)
+  .social
+    col()
+    size(3)
+    size-md(3)
+    row-flex()
+    justify-content: space-evenly
+    height: 357px
+    a
+      display: block
+      width: 142px
+      height: 142px
+      background-repeat: no-repeat
+      background-position: 0 0
+      margin: 0
+    a.twitter
+      background-image: url('../img/icons/social/twitter.png')
+      margin-right: 20px
+    a.dribbble
+      background-image: url('../img/icons/social/dribbble.png')
+    a.gp
+      background-image: url('../img/icons/social/google_plus.png')
+      margin-right: 20px
+    a.fb
+      background-image: url('../img/icons/social/fb.png')
+  .top_news
+    col()
+    size(2)
+    size-md(2)
+    background-color: #fff
+    margin-bottom 40px
+    h2
+      padding: 0 10px
+    h3
+      color: color_01
+      padding: 10px
+    .icons
+      row-flex()
+      justify-content: center
+      height: 42px
+      margin: 0
+      width: 100%
+      background-color: color_01
+      a
+        display: flex
+        align-items: center
+        padding: 0 10px 0 45px
+        margin: 0 auto
+        background-position: 10px center
+        background-repeat: no-repeat
+        color: #fff
+        text-decoration: none
+        text-align: center
+        height: 42px
+        border-left: 1px solid #fff
+        &:first-child
+          border: 0 none
+      a.views
+        background-image: url('../img/icons/view.png')
+      a.comments
+        background-image: url('../img/icons/comment.png')
+      a.likes
+        background-image: url('../img/icons/like.png')
+  .nav-container
+    col()
+    size(12)
+    margin-bottom 40px
+    background-color: #fff
+    ul.main-menu
+      align-items: center
+      height: 100px
+      row-flex()
+      li
+        padding: 0 25px
+        a.home
+          display: inline-block
+          background: url('../img/icons/home.png') no-repeat 0 0
+          width: 55px
+          height: 41px
+        a
+          font-size: 16px
+          text-decoration: none
+          color: #000000
+          &:hover
+            text-decoration: underline
+        input.field
+          border: 0 none
+          outline: none
+          background-color: #eee
+          width: 244px
+          height: 10px
+          font-size: 16px
+          color: #ccc
+          vertical-align: top
+          padding: 20px 25px
+        input.btn
+          border: 0 none
+          outline: none
+          background: url('../img/icons/search.png') no-repeat 0 0
+          width: 50px
+          height: 50px       
+  .categories#accordion
+    col()
+    size(3)
+    col-flex()
+    h3
+      display: flex
+      align-items: center
+      background-color: color_01
+      height: 50px
+      padding: 0 20px
+      margin: 0
+      cursor pointer
+      a
+        color: #fff
+        font-size: 16px
+        text-decoration: none
+        font-weight: normal
+    div.accodrion-content
+      background-color: #fff
+      height: auto
+      padding: 0
+      ul
+        width: 100%
+      li
+        display: flex
+        align-items: center
+        height: 50px
+        padding: 0 20px
+        border-top: 1px solid #05477b
+        a
+          color: #00
+          text-decoration: none
+  .popular
+    col()
+    size(3)
+    display: flex
+    flex-direction: column
+    justify-content: center
+    background-color: #fff
+    text-align: center
+    margin-bottom 40px
+    padding-bottom: 30px
+    .ava
+      background: url('../img/black_widow.png') no-repeat center center
+      width: 100%
+      height: 204px
+      padding: 30px 0
+    a.follow
+      position: relative
+      background-color: color_01
+      width: 222px
+      color: #fff
+      margin: 0 auto
+      padding: 20px 0
+      text-decoration: none
+      font-size: 20px
+      &:before
+        content: '+'
+        position: absolute
+        right: -20px
+  .weather
+    col()
+    size(3)
+    background: url('../img/weather.png') no-repeat 0 0
+    background-size: contain
+    height: 337px
+    margin-bottom 40px
+  .calendar
+    col()
+    size(3)
+    background-color: #fff
+    font-size: 24px
+    margin-bottom 40px
+    .ui-datepicker
+      width: auto
+      padding: 0
+    .ui-datepicker-header
+      background-color: color_01
+      height: 40px
+      padding: 25px 20px 10px 20px
+      color: #fff
+    .ui-datepicker-prev
+      float: left
+      cursor: pointer
+      background: url('../img/icons/arrow.png') no-repeat 0 0
+      transform: rotate(180deg)
+      width: 40px
+      height: 40px
+      text-indent: -9999px
+      margin-top: -10px
+      position: relative
+    .ui-datepicker-next
+      float: right
+      cursor pointer
+      background: url('../img/icons/arrow.png') no-repeat 0 0
+      width: 40px
+      height: 40px
+      text-indent: -9999px
+      margin-top: -10px
+      position: relative
+    .ui-datepicker-title
+      position: static
+      text-align: center
+    .ui-datepicker-calendar
+      width: 80%
+      margin: 20px auto
+      thead th
+        color: color_01
+        font-weight: normal
+        padding-bottom: 10px
+      tr
+        height: 20px
+      td
+        text-align: center
+      td.ui-datepicker-today
+          border: 1px solid #000
+          border-radius: 100%
+      td.ui-datepicker-current-day
+        outline: 1px solid #f00
+        border-radius: 100%
+      a
+        text-decoration: none
+        display: inline-block
+        
+  .switcher
+    col()
+    size(3)
+    col-flex()
+    align-items: center
+    background-color: #fff
+    .level
+      padding: 0 20px
+    #range2
+      -webkit-appearance: none /* Hides the slider so that custom slider can be made */
+      width: 100% /* Specific width is required for Firefox. */
+      background: transparent /* Otherwise white in Chrome */
+      &::-webkit-slider-thumb
+        -webkit-appearance: none
+      &::-ms-track
+        width: 100%
+        cursor: pointer
+        background: transparent
+        border-color: transparent
+        color: transparent
+      &::-webkit-slider-thumb
+        -webkit-appearance: none
+        border: 1px solid #ccc
+        height: 20px
+        width: 20px
+        border-radius: 50%
+        background: #fff
+        cursor: pointer
+        margin-top: -7px
+        box-shadow: 1px 1px 1px #000, 0px 0px 1px #0d0d0d
+      &::-webkit-slider-runnable-track
+        width: 100%
+        height: 5px
+        cursor: pointer
+        box-shadow: 1px 1px 1px #000, 0px 0px 1px #0d0d0d
+        background: color_01
+        border-radius: 10px
+        border: 0.2px solid #010101
+      &:focus::-webkit-slider-runnable-track
+        opacity: .8
+      &:focus
+        outline: none      
+    .switcher-wrap
+      border-bottom: 1px solid #000
+      padding: 0 20px
+      display: flex
+      height: 50px
+      align-items: center
+      label
+        display: flex
+        align-items: center
+        width: 100%
+        height: 32px
+      input
+        background: url('../src/icons/toggle_off.png') no-repeat right center
+        width: 56px
+        height: 32px
+        border: 0 none 
+        outline: none
+      input:checked,
+      input.active
+        background-image: url('../src/icons/toggle_on.png')
+    .range-wrap
+      height: 50px
+      padding: 0 20px
+      #slider-range
+        height: 25px
+        margin: 20px 0 0
+        & > .ui-slider-handle,
+        & > ui-state-default
+          height: 15px
+          background-color: gray
+          border-radius: 50%
+          width: 15px
+          outline: none
+        & > .ui-slider-range
+          height: 5px
+          background-color: color_01
+  .dropdown
+    size(3)
+    height: 400px
+    background-color: #fff
+    font-size: 20px
+    .ui-selectmenu-text
+      font-weight: bold
+    fieldset
+        margin: 0 0 20px
+        padding 20px
+        border: 0 none      
+  .notifications
+    col()
+    size(3)
+    background-color: #fff
+    padding: 20px
+    .notify
+      position: relative
+      height: 60px
+      width: calc(100% -85px)
+      background-color: #dff0d8
+      margin-bottom: 28px
+      display: flex
+      align-items: center
+      padding-left: 25px
+      padding-right: 60px
+      &:after
+        content: 'X'
+        position: absolute
+        right: 25px
+        border-radius: 50%
+        border: 1px solid #000
+        width: 32px
+        height: 22px
+        text-align: center
+        padding-top: 10px
+        float: right
+      &:last-child
+        margin-bottom 0
+      &.attention
+        background-color: #d9edf7
+      &.warning
+        background-color: #fcf8e3
+      &.wrong
+        background-color: #f2dede
+  #myForm
+    col()
+    size(3)
+    col-flex()
+    background-color: #fff
+    padding: 20px
+    input
+      height: 10px
+      padding: 20px
+      background-color: #eee
+      border: 0 none
+      margin-bottom: 30px
+    textarea
+      width: calc(100% - 40px)
+      padding: 20px
+      background-color: #eee
+      border: 0 none
+      margin-bottom 30px

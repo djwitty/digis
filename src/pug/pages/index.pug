@@ -1,0 +1,131 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title DIGIS
+    link(rel="stylesheet", href="css/jquery-ui.min.css")
+    link(rel="stylesheet", href="css/styles.css")
+  body
+    .wrapper
+      .content
+        .slider-wrapper
+          .slider
+            .slider-item
+              img(src="img/slide_01.png")
+            .slider-item
+              img(src="img/slide_01.png")
+            .slider-item
+              img(src="img/slide_01.png")
+        .social
+          a.twitter(href="#" name="twitter")
+          a.dribbble(href="#" name="dribbble")
+          a.gp(href="#" name="google-plus")
+          a.fb(href="#" name="facebook")
+        .top_news
+          .top_news-item
+          img(src="img/top_news_img_01.png", alt="", srcset="")
+          h2 Tony Stark is Iron Man
+          h3 Description
+          .icons
+            a.views(href="#" title="views") 123
+            a.comments(href="#" title="comments") 21
+            a.likes(href="#" title="likes") 66
+        .nav-container
+          ul.main-menu
+            li
+              a(href="#" name="home" class="home")
+            li
+              a(href="#") About
+            li
+              a(href="#" ) Services
+            li
+              a(href="#") Portfolio
+            li
+              a(href="#") Blog
+            li
+              a(href="#") Contact
+            li
+              input.field(type="text" placeholder="Search")
+              input.btn(type="button", value="")
+        div.categories#accordion
+          h3
+            a(href="#") Web Design
+          div.accodrion-content
+            ul
+              li
+                a(href="#") Ecommerce
+              li
+                a(href="#") Blogs
+              li
+                a(href="#") Portfolio
+          h3
+            a(href="#") Print Design
+          div.accodrion-content
+            ul
+              li
+                a(href="#") Elem1
+              li
+                a(href="#") Elem2
+          h3
+            a(href="#") Photography
+          div.accodrion-content
+            ul
+              li
+                a(href="#") Elem3
+              li 
+                a(href="#") Elem4
+        .popular
+          .ava
+          h2 Scarlett Johansson
+          h3 Black Widow
+          a.follow(href="#") Follow
+        .weather
+          .top
+          .current
+          .days
+        .calendar#datepicker
+        .switcher
+          form(action="#")
+            .switcher-wrap
+              label.status(for="switch1") ON
+              input#switch1.active(type="checkbox" checked)
+            .switcher-wrap
+              label.status(for="switch2") OFF
+              input#switch2(type="checkbox")
+            .range-wrap
+              #slider-range
+              p
+                label(for="amount")
+                input#amount(type="hidden")
+            p.level#level
+              input(type="range", name="range" id="range2" min="0" max="100")
+        .dropdown
+          #dropdown1
+            fieldset
+              label(for="speed") 
+              select(name="speed" id="speed")
+                option(value="Option 1") DropDown Normal
+                option(value="Option 2") Option 1
+                option(value="Option 2") Option 2
+          #dropdown2
+            fieldset
+              label(for="next_dd") 
+              select(name="next_dd" id="next_dd")
+                option(value="Option 444") DropDown Normal
+                option(value="Option 333") Option 333
+                option(value="Option 222") Option 222
+        .notifications
+          .notify.congrats Congratulations !
+          .notify.attention Attention !
+          .notify.warning Warning !
+          .notify.wrong Wrong !
+        form.contact_form#myForm(action="#")
+          input(type="text" name="name" placeholder="Username")
+          input(type="password" name="password" placeholder="Password")
+          textarea(name="comment")
+          input(type="submit", value="Send Message")
+
+script(src="js/libs.min.js")
+script(src="js/index.js")
