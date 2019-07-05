@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DIGIS</title>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <div class="slider-wrapper">
+          <div class="slider">
+            <div class="slider-item"><img src="img/slide_01.png"></div>
+            <div class="slider-item"><img src="img/slide_01.png"></div>
+            <div class="slider-item"><img src="img/slide_01.png"></div>
+          </div>
+        </div>
+        <div class="social"><a class="twitter" href="#" name="twitter"></a><a class="dribbble" href="#" name="dribbble"></a><a class="gp" href="#" name="google-plus"></a><a class="fb" href="#" name="facebook"></a></div>
+        <div class="top_news">
+          <div class="top_news-item"></div><img src="img/top_news_img_01.png" alt="" srcset="">
+          <h2>Tony Stark is Iron Man</h2>
+          <h3>Description</h3>
+          <div class="icons"><a class="views" href="#" title="views">123</a><a class="comments" href="#" title="comments">21</a><a class="likes" href="#" title="likes">66</a></div>
+        </div>
+        <div class="nav-container">
+          <ul class="main-menu">
+            <li><a class="home" href="#" name="home"></a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li>
+              <input class="field" type="text" placeholder="Search">
+              <input class="btn" type="button" value="">
+            </li>
+          </ul>
+        </div>
+        <div class="categories" id="accordion">
+          <h3><a href="#">Web Design</a></h3>
+          <div class="accodrion-content">
+            <ul>
+              <li><a href="#">Ecommerce</a></li>
+              <li><a href="#">Blogs</a></li>
+              <li><a href="#">Portfolio</a></li>
+            </ul>
+          </div>
+          <h3><a href="#">Print Design</a></h3>
+          <div class="accodrion-content">
+            <ul>
+              <li><a href="#">Elem1</a></li>
+              <li><a href="#">Elem2</a></li>
+            </ul>
+          </div>
+          <h3><a href="#">Photography</a></h3>
+          <div class="accodrion-content">
+            <ul>
+              <li><a href="#">Elem3</a></li>
+              <li> <a href="#">Elem4</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="popular">
+          <div class="ava"></div>
+          <h2>Scarlett Johansson</h2>
+          <h3>Black Widow</h3><a class="follow" href="#">Follow</a>
+        </div>
+        <div class="weather">
+          <div class="top"></div>
+          <div class="current"></div>
+          <div class="days"></div>
+        </div>
+        <div class="calendar" id="datepicker"></div>
+        <div class="switcher">
+          <form action="#">
+            <div class="switcher-wrap">
+              <label class="status" for="switch1">ON</label>
+              <input class="active" id="switch1" type="checkbox" checked>
+            </div>
+            <div class="switcher-wrap">
+              <label class="status" for="switch2">OFF</label>
+              <input id="switch2" type="checkbox">
+            </div>
+            <div class="range-wrap">
+              <div id="slider-range"></div>
+              <p>
+                <label for="amount"></label>
+                <input id="amount" type="hidden">
+              </p>
+            </div>
+            <p class="level" id="level">
+              <input type="range" name="range" id="range2" min="0" max="100">
+            </p>
+          </form>
+        </div>
+        <div class="dropdown">
+          <div id="dropdown1">
+            <ul>
+              <li><a class="dropdown-button" href="#">Select Item</a>
+                <ul class="dropdown-sub">
+                  <li><a href="#">Item 1</a></li>
+                  <li><a href="#">Item 2</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="notifications">
+          <div class="notify congrats">Congratulations !<span>x</span></div>
+          <div class="notify attention">Attention !<span>x</span></div>
+          <div class="notify warning">Warning !<span>x</span></div>
+          <div class="notify wrong">Wrong !<span>x</span></div>
+        </div>
+        <form class="contact_form" id="myForm" action="#">
+          <input type="text" name="name" placeholder="Username">
+          <input type="password" name="password" placeholder="Password">
+          <textarea name="comment"></textarea>
+          <input class="submit" type="submit" value="Send Message">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="js/libs.min.js"></script>
+<script src="js/index.js"></script>

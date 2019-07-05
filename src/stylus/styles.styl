@@ -1,4 +1,3 @@
-@import 'smart-grid'
 @import 'libs.styl'
 @import 'variables.styl'
 
@@ -16,26 +15,24 @@ ul, li
 .wrapper
   padding: 76px 0 66px
   margin: 0 auto
-  width: 1680px
+  width: 1620px
 .clear
   clear: both
   height: 0 !important
   min-height: 0 !important
   font-size: 0
+.grid
+  display: grid
+  grid-template-columns: repeat(4, 300px)
+  grid-template-rows: repeat(4, 100px)
+  grid-gap: 40px
 .content
-  row-flex()
   .slider-wrapper
-    col()
-    size(7)
-    size-md(7)
-    lg(justify-content, center)
     padding-bottom: 108px
+    width: 960px
     .slider
-      col()
-      size(12)
       position: relative
       height: 256px
-      padding-bottom: 104px
       button.slick-arrow
         position: absolute
         bottom: -64px
@@ -57,11 +54,8 @@ ul, li
         right: 0
         background-image: url('../img/icons/arrow.png')
       .slick-dots
-        row-flex()
-        col()
-        size(12)
+        display: flex
         margin: 0
-        padding: 1rem 0
         justify-content: center
         align-items: center
         height: 64px
@@ -83,20 +77,13 @@ ul, li
         }
       .slider-item
         background-color: #ccc
-        size-lg(12)
-        size-md(12)
-        size-sm(12)
         height: 256px
-      col()
-        size(12)
-        size-md(12)
-        size-xs(12)
   .social
-    col()
-    size(3)
-    size-md(3)
-    row-flex()
-    justify-content: space-evenly
+    display: grid
+    grid-template-rows: repeat(2, 140px)
+    grid-template-columns: repeat(2, 140px)
+    grid-gap: 40px
+    justify-content: start
     height: 357px
     a
       display: block
@@ -107,19 +94,15 @@ ul, li
       margin: 0
     a.twitter
       background-image: url('../img/icons/social/twitter.png')
-      margin-right: 20px
     a.dribbble
       background-image: url('../img/icons/social/dribbble.png')
     a.gp
       background-image: url('../img/icons/social/google_plus.png')
-      margin-right: 20px
     a.fb
       background-image: url('../img/icons/social/fb.png')
   .top_news
-    col()
-    size(2)
-    size-md(2)
     background-color: #fff
+    width: 253px
     margin-bottom 40px
     h2
       padding: 0 10px
@@ -127,7 +110,7 @@ ul, li
       color: color_01
       padding: 10px
     .icons
-      row-flex()
+      display: flex
       justify-content: center
       height: 42px
       margin: 0
@@ -154,16 +137,20 @@ ul, li
       a.likes
         background-image: url('../img/icons/like.png')
   .nav-container
-    col()
-    size(12)
+    max-width: 1620px
     margin-bottom 40px
     background-color: #fff
     ul.main-menu
       align-items: center
-      height: 100px
-      row-flex()
+      display: flex
       li
+        display: flex
+        align-items: center
         padding: 0 25px
+        border-left: 1px solid #ccc
+        height: 100px
+        &:first-child
+          border: 0 none
         a.home
           display: inline-block
           background: url('../img/icons/home.png') no-repeat 0 0
@@ -190,11 +177,10 @@ ul, li
           outline: none
           background: url('../img/icons/search.png') no-repeat 0 0
           width: 50px
-          height: 50px       
+          height: 50px
+          cursor pointer
   .categories#accordion
-    col()
-    size(3)
-    col-flex()
+    margin: 0 0 40px
     h3
       display: flex
       align-items: center
@@ -224,8 +210,6 @@ ul, li
           color: #00
           text-decoration: none
   .popular
-    col()
-    size(3)
     display: flex
     flex-direction: column
     justify-content: center
@@ -252,15 +236,11 @@ ul, li
         position: absolute
         right: -20px
   .weather
-    col()
-    size(3)
     background: url('../img/weather.png') no-repeat 0 0
     background-size: contain
     height: 337px
     margin-bottom 40px
   .calendar
-    col()
-    size(3)
     background-color: #fff
     font-size: 24px
     margin-bottom 40px
@@ -294,6 +274,7 @@ ul, li
     .ui-datepicker-title
       position: static
       text-align: center
+      line-height: 1em
     .ui-datepicker-calendar
       width: 80%
       margin: 20px auto
@@ -309,24 +290,22 @@ ul, li
           border: 1px solid #000
           border-radius: 100%
       td.ui-datepicker-current-day
-        outline: 1px solid #f00
+        outline: 1px solid #ccc
         border-radius: 100%
       a
         text-decoration: none
         display: inline-block
         
   .switcher
-    col()
-    size(3)
-    col-flex()
     align-items: center
     background-color: #fff
+    margin-bottom 40px
     .level
-      padding: 0 20px
+      padding: 0 20px 30px
     #range2
-      -webkit-appearance: none /* Hides the slider so that custom slider can be made */
-      width: 100% /* Specific width is required for Firefox. */
-      background: transparent /* Otherwise white in Chrome */
+      -webkit-appearance: none
+      width: 100%
+      background: transparent
       &::-webkit-slider-thumb
         -webkit-appearance: none
       &::-ms-track
@@ -378,7 +357,6 @@ ul, li
       input.active
         background-image: url('../src/icons/toggle_on.png')
     .range-wrap
-      height: 50px
       padding: 0 20px
       #slider-range
         height: 25px
@@ -394,21 +372,50 @@ ul, li
           height: 5px
           background-color: color_01
   .dropdown
-    size(3)
-    height: 400px
-    background-color: #fff
-    font-size: 20px
-    .ui-selectmenu-text
-      font-weight: bold
-    fieldset
-        margin: 0 0 20px
-        padding 20px
-        border: 0 none      
+    margin-bottom 40px
+    ul
+      li
+        
+        > a.dropdown-button
+          display: flex
+          align-items: center
+          background-color: #fff
+          padding: 0 20px
+          width: calc(100%-40px)
+          height: 50px
+          text-decoration: none
+        > a:focus,
+        > a.active
+          background-color: color_01
+          margin-bottom: 10px
+        ul.dropdown-sub
+          display: none
+          position: relative
+          background-color: #fff
+          &:before
+            content: ''
+            width: 11px
+            height: 11px
+            background-color: #fff
+            position: absolute
+            right: 20px
+            top: -5px
+            transform: rotate(45deg)
+          li
+            a
+              display: flex
+              align-items: center
+              background-color: #fff
+              padding: 0 20px
+              width: calc(100%-40px)
+              height: 50px
+              text-decoration: none
+        ul.dropdown-sub.active
+          display: block
   .notifications
-    col()
-    size(3)
     background-color: #fff
     padding: 20px
+    margin-bottom 40px
     .notify
       position: relative
       height: 60px
@@ -419,8 +426,7 @@ ul, li
       align-items: center
       padding-left: 25px
       padding-right: 60px
-      &:after
-        content: 'X'
+      span
         position: absolute
         right: 25px
         border-radius: 50%
@@ -428,8 +434,9 @@ ul, li
         width: 32px
         height: 22px
         text-align: center
-        padding-top: 10px
-        float: right
+        padding: 5px 0
+        font-size: 20px
+        cursor pointer
       &:last-child
         margin-bottom 0
       &.attention
@@ -439,17 +446,17 @@ ul, li
       &.wrong
         background-color: #f2dede
   #myForm
-    col()
-    size(3)
-    col-flex()
     background-color: #fff
     padding: 20px
     input
-      height: 10px
       padding: 20px
       background-color: #eee
       border: 0 none
       margin-bottom: 30px
+    input.submit
+      background-color: color_01
+      color: #fff
+      font-size: 20px
     textarea
       width: calc(100% - 40px)
       padding: 20px
