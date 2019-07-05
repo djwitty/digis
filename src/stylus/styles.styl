@@ -4,7 +4,7 @@
 body
   background-color: #055b83
   color: #444444
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Verdana, Geneva, Tahoma, sans-serif
   font-size: 14px
   margin: 0
   padding: 0
@@ -13,23 +13,36 @@ ul, li
   margin: 0
   padding: 0
 .wrapper
-  padding: 76px 0 66px
+  padding: 76px 50px 66px
   margin: 0 auto
-  width: 1620px
+  width: 1520px
+  @media screen and (max-width: 1620px)
+    width: auto
 .clear
   clear: both
   height: 0 !important
   min-height: 0 !important
   font-size: 0
-.grid
+.grid.col3
   display: grid
-  grid-template-columns: repeat(4, 300px)
-  grid-template-rows: repeat(4, 100px)
+  grid-template-columns: 960px 1fr 253px
   grid-gap: 40px
+  @media screen and (max-width: 1620px)
+    grid-template-columns: 960px 253px
+    grid-gap: 30px
+.grid.col4
+  display: grid
+  grid-template-columns: 323px 1fr 1fr 253px
+  grid-gap: 40px
+  @media screen and (max-width: 1620px)
+    grid-template-columns: 50% 50%
+    grid-gap: 30px
 .content
   .slider-wrapper
     padding-bottom: 108px
-    width: 960px
+    grid-column: 1/3
+    @media screen and (max-width: 1620px)
+      grid-column: 1 / 1
     .slider
       position: relative
       height: 256px
@@ -85,6 +98,13 @@ ul, li
     grid-gap: 40px
     justify-content: start
     height: 357px
+    justify-content: center
+    @media screen and (max-width: 1620px)
+      position: absolute
+      top: 0
+      height: auto
+      grid-template-columns: repeat(4, 70px)
+      grid-template-rows: repeat(1, 70px)
     a
       display: block
       width: 142px
@@ -92,6 +112,10 @@ ul, li
       background-repeat: no-repeat
       background-position: 0 0
       margin: 0
+      @media screen and (max-width: 1620px)
+        width: 70px
+        height: 70px
+        background-size: contain
     a.twitter
       background-image: url('../img/icons/social/twitter.png')
     a.dribbble
@@ -102,13 +126,19 @@ ul, li
       background-image: url('../img/icons/social/fb.png')
   .top_news
     background-color: #fff
-    width: 253px
     margin-bottom 40px
+    @media screen and (max-width: 1620px)
+      grid-column: 2 / 2
+      text-align: center
     h2
-      padding: 0 10px
+      padding: 10px 10px 0 10px
+      margin 0
+      font-size: 18px
+      font-weight: normal
     h3
       color: color_01
-      padding: 10px
+      padding: 0 10px 10px 10px
+      margin: 0
     .icons
       display: flex
       justify-content: center
@@ -138,15 +168,21 @@ ul, li
         background-image: url('../img/icons/like.png')
   .nav-container
     max-width: 1620px
+    height: 100px
     margin-bottom 40px
     background-color: #fff
+    grid-column: 1 / 4
+    @media screen and (max-width: 1620px)
+      grid-column: 1 / 3
     ul.main-menu
       align-items: center
       display: flex
+      justify-content: space-evenly
       li
         display: flex
         align-items: center
-        padding: 0 25px
+        justify-content: center
+        width: 100%
         border-left: 1px solid #ccc
         height: 100px
         &:first-child
@@ -172,8 +208,10 @@ ul, li
           color: #ccc
           vertical-align: top
           padding: 20px 25px
+          margin: 0 0 0 25px
         input.btn
           border: 0 none
+          margin-right 25px
           outline: none
           background: url('../img/icons/search.png') no-repeat 0 0
           width: 50px
@@ -181,6 +219,9 @@ ul, li
           cursor pointer
   .categories#accordion
     margin: 0 0 40px
+    grid-template-rows: 1 / 3
+    @media screen and (max-width: 1620px)
+      grid-column: 3 / 1
     h3
       display: flex
       align-items: center
@@ -217,6 +258,8 @@ ul, li
     text-align: center
     margin-bottom 40px
     padding-bottom: 30px
+    @media screen and (max-width: 1620px)
+      grid-column: 1 / 1
     .ava
       background: url('../img/black_widow.png') no-repeat center center
       width: 100%
@@ -231,19 +274,31 @@ ul, li
       padding: 20px 0
       text-decoration: none
       font-size: 20px
-      &:before
-        content: '+'
-        position: absolute
-        right: -20px
+      span
+        border: 1px solid #ffffff
+        border-radius: 50%
+        padding: 5px 8px
+        margin-left 10px
   .weather
+    position relative
     background: url('../img/weather.png') no-repeat 0 0
     background-size: contain
     height: 337px
     margin-bottom 40px
+    @media screen and (max-width: 1620px)
+      grid-column: 2 / 2
+    a
+      position: absolute
+      left: 0
+      top: 0
+      right: 0
+      bottom: 0
   .calendar
     background-color: #fff
     font-size: 24px
     margin-bottom 40px
+    @media screen and (max-width: 1620px)
+      grid-column: 2 / 1
     .ui-datepicker
       width: auto
       padding: 0
@@ -300,6 +355,8 @@ ul, li
     align-items: center
     background-color: #fff
     margin-bottom 40px
+    @media screen and (max-width: 1620px)
+      grid-column: 2 / 2
     .level
       padding: 0 20px 30px
     #range2
@@ -373,9 +430,10 @@ ul, li
           background-color: color_01
   .dropdown
     margin-bottom 40px
+    @media screen and (max-width: 1620px)
+      grid-column: 1 / 3
     ul
       li
-        
         > a.dropdown-button
           display: flex
           align-items: center
@@ -416,6 +474,8 @@ ul, li
     background-color: #fff
     padding: 20px
     margin-bottom 40px
+    @media screen and (max-width: 1620px)
+      grid-column: 1 / 1
     .notify
       position: relative
       height: 60px
@@ -434,7 +494,7 @@ ul, li
         width: 32px
         height: 22px
         text-align: center
-        padding: 5px 0
+        padding: 4px 0 8px
         font-size: 20px
         cursor pointer
       &:last-child
@@ -448,6 +508,9 @@ ul, li
   #myForm
     background-color: #fff
     padding: 20px
+    grid-column: 3 / 5
+    @media screen and (max-width: 1600px)
+      grid-column: 2 / 3
     input
       padding: 20px
       background-color: #eee
