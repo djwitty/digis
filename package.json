@@ -30,9 +30,7 @@
     "gulp-stylus": "^2.7.0",
     "imagemin-mozjpeg": "^8.0.0",
     "jquery": "^3.4.1",
-    "nouislider": "^14.0.2",
-    "slick-carousel": "^1.8.1",
-    "smart-grid": "^2.1.2"
+    "slick-carousel": "^1.8.1"
   },
   "keywords": [
     "test",
