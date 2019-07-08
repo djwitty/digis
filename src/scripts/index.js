@@ -4,14 +4,23 @@ $(document).ready(function (){
     cssEase: 'linear'
   });
   $( "#accordion" ).accordion({
-    heightStyle: "content"
+    heightStyle: "content",
+    collapsible: true
   });
   $( "#datepicker" ).datepicker({
     firstDay : 1,
     dayNamesMin: [ "S", "M", "T", "W", "T", "F", "S" ]
   });
-  $(".switcher-wrap > input").on('click', function(){
-    $(this).toggleClass("active");
+  $(".switcher-wrap > input",).on('click', function(){
+    $(this).parent().find('div').toggleClass("active");
+    if ($(this).parent().find('label').text() == "ON") {
+      $(this).parent().find('label').text('OFF');
+    } else
+    $(this).parent().find('label').text('ON');
+  });
+  $(".switcher-wrap > div",).on('click', function(){
+    $(this).parent().find('input').toggleClass("active");
+    $(this).toggleClass('active');
     if ($(this).parent().find('label').text() == "ON") {
       $(this).parent().find('label').text('OFF');
     } else

@@ -20,10 +20,10 @@ html(lang="en")
               .slider-item
                 img(src="img/slide_01.png")
           .social
-            a.twitter(href="#" name="twitter")
-            a.dribbble(href="#" name="dribbble")
-            a.gp(href="#" name="google-plus")
-            a.fb(href="#" name="facebook")
+            a.twitter(href="https://twitter.com/" name="twitter" target="_blank")
+            a.dribbble(href="https://dribbble.com/" name="dribbble" target="_blank")
+            a.gp(href="http://google.com/" name="google-plus" target="_blank")
+            a.fb(href="https://fb.com/" name="facebook" target="_blank")
           .top_news
             .top_news-item
             img(src="img/top_news_img_01.png", alt="", srcset="")
@@ -49,8 +49,8 @@ html(lang="en")
                 a(href="#") Contact
               li
                 input.field(type="text" placeholder="Search")
-                input.btn(type="button", value="")
-          div.categories#accordion
+                input.btn(type="button", value="" title="search")
+          .categories#accordion
             h3
               a(href="#") Web Design
             div.accodrion-content
@@ -86,14 +86,17 @@ html(lang="en")
           .weather
             a(href="https://www.accuweather.com/en/ua/odesa/325343/weather-forecast/325343")
           .calendar#datepicker
+
           .switcher
             form(action="#")
               .switcher-wrap
                 label.status(for="switch1") ON
                 input#switch1.active(type="checkbox" checked)
+                div.active
               .switcher-wrap
                 label.status(for="switch2") OFF
                 input#switch2(type="checkbox")
+                div
               .range-wrap
                 #slider-range
                 p
@@ -106,6 +109,7 @@ html(lang="en")
               ul
                 li
                   a.dropdown-button(href="#") Select Item
+                    span &#9652;
                   ul.dropdown-sub
                     li
                       a(href="#") Item 1
@@ -120,11 +124,12 @@ html(lang="en")
               span x
             .notify.wrong Wrong !
               span x
-          form.contact_form#myForm(action="#")
-            input(type="text" name="name" placeholder="Username")
-            input(type="password" name="password" placeholder="Password")
-            textarea(name="comment")
-            input.submit(type="submit", value="Send Message")
+          .contact_form#myForm(action="#")
+            fieldset
+              input(type="text" name="name" placeholder="Username")
+              input(type="password" name="password" placeholder="Password")
+              textarea(name="comment")
+              input.submit(type="submit", value="Send Message")
   
 script(src="js/libs.min.js")
 script(src="js/index.js")
